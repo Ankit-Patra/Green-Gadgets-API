@@ -14,7 +14,7 @@ cors = CORS(app)
 @cross_origin()
 def predict():
     data = request.get_json()
-    weight = float(data['Weight'])
+    weight = float(data['weight'])
     try:
         prediction = model.predict([[weight]])
         gold = int(prediction) * 0.0003 * 1000
@@ -30,12 +30,12 @@ def predict():
         copper1 = math.ceil((copper * prices.get("copper") / 5))
         total_credit_points = (gold1 + silver1 + palladium1 + platinum1 + copper1)
         return jsonify({
-            "credit_score" : int(total_credit_points),
+            "Credit Score" : int(total_credit_points),
             "Gold" : gold,
-            "silver" : silver,
-            "copper" : copper,
-            "palladium" : palladium,
-            "platinum" : platinum
+            "Silver" : silver,
+            "Copper" : copper,
+            "Palladium" : palladium,
+            "Platinum" : platinum
         })
     except Exception as e:
         return e
