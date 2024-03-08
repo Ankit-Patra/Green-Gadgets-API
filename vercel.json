@@ -3,7 +3,6 @@
     "builds": [
         {
             "src":"./index.py",
-            "user":"@vercel/python",
             "config":{"runtime":"python3.6"}
         }
     ],
